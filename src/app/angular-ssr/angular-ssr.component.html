@@ -1,0 +1,21 @@
+<div>
+  <h2>Post</h2>
+  <button (click)="getPost()">On click</button>
+  <table>
+    <thead>
+      <tr>
+        <th>Table</th>
+        <th>Body</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (post of posts$ | async; track post.id) {
+        <tr>
+          <td>{{post.title}}</td>
+          <td>{{post.body}}</td>
+        </tr>
+      }
+     
+    </tbody>
+  </table>
+</div>
